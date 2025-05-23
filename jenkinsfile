@@ -1,0 +1,48 @@
+pipeline{
+    agent any
+
+    environment{
+        DIRECTORY_PATH = 'C:/ProgramData/Jenkins/.jenkins/workspace/Jenkins_github'
+        TESTING_ENVIRONMENT = 'Dev'
+        PRODUCTION_ENVIRONMENT = 'YasiKule'
+    }
+
+   stages {
+        stage('Build') {
+            steps {
+                echo "Task: Compile and package the code."
+                echo "Tool: Maven"
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo "Task: Run unit and integration tests."
+                echo "Tool: JUnit and TestNG"
+            }
+        }
+
+        stage('Code Analysis') {
+            steps {
+                echo "Task: Perform static code analysis."
+                echo "Tool: SonarQube"
+            }
+        }
+
+        stage(' Deploy to Staging') {
+            steps {
+                echo "Task: Deploy application to staging server."
+                echo " Tool: AWS CLI or Jenkins SSH Plugi"
+            }
+        }
+
+        stage('Integration Tests on Staging') {
+            steps {
+                echo "Task: Run integration tests on staging environment."
+                echo "Tool: Postman (Newman CLI) or Selenium"
+            }
+        }
+
+
+    }
+}
