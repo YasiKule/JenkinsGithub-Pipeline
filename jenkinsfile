@@ -42,6 +42,12 @@ pipeline{
                 echo "Tool: Postman (Newman CLI) or Selenium"
             }
         }
+        stage('Deploy to Production') {
+            steps {
+                echo "Task: Deploy application to production server."
+                echo "Tool: AWS CLI or Ansible"
+            }
+        }
 
 
     }
